@@ -90,13 +90,13 @@ test_output_contains('print(paste("The year is", 2011))', incorrect_msg = 'Your 
 
 test_output_contains('print(paste("The year is", 2012))', incorrect_msg = 'Your output did not contain `"The year is 2012"`, look at the instructions for help.')
 
-test_output_contains('print(paste("The year is", 2010))', incorrect_msg = 'Your output did not contain `"The year is 2013"`, look at the instructions for help.')
+test_output_contains('print(paste("The year is", 2013))', incorrect_msg = 'Your output did not contain `"The year is 2013"`, look at the instructions for help.')
 
-test_output_contains('print(paste("The year is", 2010))', incorrect_msg = 'Your output did not contain `"The year is 2014"`, look at the instructions for help.')
+test_output_contains('print(paste("The year is", 2014))', incorrect_msg = 'Your output did not contain `"The year is 2014"`, look at the instructions for help.')
 
-test_output_contains('print(paste("The year is", 2010))', incorrect_msg = 'Your output did not contain `"The year is 2015"`, look at the instructions for help.')
+test_output_contains('print(paste("The year is", 2015))', incorrect_msg = 'Your output did not contain `"The year is 2015"`, look at the instructions for help.')
 
-test_output_contains('print(paste("The year is", 2010))', incorrect_msg = 'Your output did not contain `"The year is 2016"`, look at the instructions for help.')
+test_output_contains('print(paste("The year is", 2016))', incorrect_msg = 'Your output did not contain `"The year is 2016"`, look at the instructions for help.')
 
 test_function("print", 
               args = NULL, index = 1, 
