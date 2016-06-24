@@ -139,7 +139,7 @@ test_error(incorrect_msg = "Fill in the blank spaces with R code. Follow the exa
 success_msg("Good work!")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 
+--- type:NormalExercise lang:r xp:100 skills:1  key:099f1482c3
 ## For() loop
 
 You immediately see this is rather tedious: you repeat the same code chunk over and over. 
