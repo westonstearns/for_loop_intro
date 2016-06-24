@@ -84,19 +84,19 @@ print(paste("The year is", 2016))
 ```{r}
 # SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
 
-test_output_contains("The year is 2010", incorrect_msg = 'Your output did not contain `"The is year 2010"`, look at the instructions for help.')
+test_output_contains("The year is 2010", incorrect_msg = 'Your output did not contain `"The year is 2010"`, look at the instructions for help.')
 
-test_output_contains("The year is 2011", incorrect_msg = 'Your output did not contain `"The is year 2011"`, look at the instructions for help. ')
+test_output_contains("The year is 2011", incorrect_msg = 'Your output did not contain `"The year is 2011"`, look at the instructions for help. ')
 
-test_output_contains("The year is 2012", incorrect_msg = 'Your output did not contain `"The is year 2012"`, look at the instructions for help.')
+test_output_contains("The year is 2012", incorrect_msg = 'Your output did not contain `"The year is 2012"`, look at the instructions for help.')
 
-test_output_contains("The year is 2013", incorrect_msg = 'Your output did not contain `"The is year 2013"`, look at the instructions for help.')
+test_output_contains("The year is 2013", incorrect_msg = 'Your output did not contain `"The year is 2013"`, look at the instructions for help.')
 
-test_output_contains("The year is 2014", incorrect_msg = 'Your output did not contain `"The is year 2014"`, look at the instructions for help.')
+test_output_contains("The year is 2014", incorrect_msg = 'Your output did not contain `"The year is 2014"`, look at the instructions for help.')
 
-test_output_contains("The year is 2015", incorrect_msg = 'Your output did not contain `"The is year 2015"`, look at the instructions for help.')
+test_output_contains("The year is 2015", incorrect_msg = 'Your output did not contain `"The year is 2015"`, look at the instructions for help.')
 
-test_output_contains("The year is 2016", incorrect_msg = 'Your output did not contain `"The is year 2016"`, look at the instructions for help.')
+test_output_contains("The year is 2016", incorrect_msg = 'Your output did not contain `"The year is 2016"`, look at the instructions for help.')
 
 test_function("print", 
               args = NULL, index = 1, 
