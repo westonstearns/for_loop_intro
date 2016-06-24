@@ -180,11 +180,15 @@ for (year in c(2010,2011,2012,2013,2014,2015)){
   print(paste("The year is", year))
 }
 
+
 ```
 
 *** =sct
 ```{r}
+test_function("for", incorrect_msg = "Something is not quite right with your `for()` loop.")
 
+test_output_regex(""The year is 201[0-6]{1}",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years ar included")
 
 test_error()
 success_msg("Good work!")
