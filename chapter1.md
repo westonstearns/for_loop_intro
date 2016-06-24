@@ -176,7 +176,7 @@ for (___ in c(___,___,___,___,___,___,___)){
 *** =solution
 ```{r}
 # Write for loop here
-for (year in c(2010,2011,2012,2013,2014,2015)){
+for (year in c(2010,2011,2012,2013,2014,2015,2016)){
   print(paste("The year is", year))
 }
 
@@ -186,9 +186,9 @@ for (year in c(2010,2011,2012,2013,2014,2015)){
 *** =sct
 ```{r}
 test_for_loop(index = 1, 
-              cond_test = NULL, 
-              expr_test = NULL, 
-              not_found_msg = "Something is not quite right with your `for()` loop.")
+              cond_test = test_student_typed("year in c(2010,2011,2012,2013,2014,2015,2016)", 
+                      not_typed_msg = "Make sure you use `year in c(2010,2011,2012,2013,2014,2015,2016)` to define your for loop."),
+              not_found_msg = "Did you run your `for()` loop.")
 
 test_output_regex("The year is 201[0-6]{1}",
                   incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
