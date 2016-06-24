@@ -17,7 +17,7 @@ Let's begin by printing the form manually.
 
 *** =instructions
 - Use `print()`, `paste()` and the combination of the text string `"The year is"` and a numerical year to achve the desired print outs
-- Your code should follow the format ```print(paste("Test",Year))```
+- Your code should follow the format ```print(paste("Text",Year))```
 
 
 *** =hint
