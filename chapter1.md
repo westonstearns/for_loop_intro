@@ -3,7 +3,7 @@ title       : For loops
 description : A brief intro to writing for loops
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e20287ea44
-## For loop
+## Manual Print
 
 In this tutorial we will have a look at how you can write a basic for loop in R. It is aimed at beginners, and if you’re not yet familiar with the basic syntax of the R language we recommend you to first have a look at this <a href = "https://www.datacamp.com/courses/free-introduction-to-r">introductory R tutorial</a>.
 
