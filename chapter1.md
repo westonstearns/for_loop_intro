@@ -148,9 +148,9 @@ This violates the DRY principle, known in every programming language: Don’t Re
 
 In this case, by making use of a for loop in R, you can automate the repetitive part:
 
-```for (variable in c(sequence)){
-  <p>print(paste("Text", number))</p><p>
-}</p>```
+```for (variable in c(sequence)){```
+<p>```print(paste("Text", number))```</p>
+<p>```}```</p>
 
 *** =instructions
 - Use a `for()` loop to print out the list of 7 phrases.
