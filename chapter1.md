@@ -139,8 +139,8 @@ test_error(incorrect_msg = "Fill in the blank spaces with R code. Follow the exa
 success_msg("Good work!")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:9220b2b3d7
-## For loop
+--- type:NormalExercise lang:r xp:100 skills:1 
+## For() loop
 
 You immediately see this is rather tedious: you repeat the same code chunk over and over. 
 
@@ -166,7 +166,7 @@ In this case, by making use of a for loop in R, you can automate the repetitive 
 
 *** =sample_code
 ```{r}
-Write for loop here
+# Write for loop here
 for (___ in c(___,___,___,___,___,___,___)){
   print(paste("The year is", year))
 }
@@ -175,7 +175,7 @@ for (___ in c(___,___,___,___,___,___,___)){
 
 *** =solution
 ```{r}
-Write for loop here
+# Write for loop here
 for (year in c(2010,2011,2012,2013,2014,2015)){
   print(paste("The year is", year))
 }
