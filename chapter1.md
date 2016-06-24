@@ -57,18 +57,25 @@ ___(___("___", ___))
 *** =solution
 ```{r}
 # Print out the 7 text strings
+# 2010
 print(paste("The year is", 2010))
 
+# 2011
 print(paste("The year is", 2011))
 
+# 2012
 print(paste("The year is", 2012))
 
+# 2013
 print(paste("The year is", 2013))
 
+# 2014
 print(paste("The year is", 2014))
 
+# 2015
 print(paste("The year is", 2015))
 
+# 2016
 print(paste("The year is", 2016))
 
 ```
