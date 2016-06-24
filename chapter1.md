@@ -149,8 +149,8 @@ This violates the DRY principle, known in every programming language: Don’t Re
 In this case, by making use of a for loop in R, you can automate the repetitive part:
 
 ```for (variable in c(sequence)){
-  print(paste("Text", number))
-}```
+  <p>print(paste("Text", number))</p><p>
+}</p>```
 
 *** =instructions
 - Use a `for()` loop to print out the list of 7 phrases.
@@ -184,7 +184,7 @@ for (year in c(2010,2011,2012,2013,2014,2015)){
 
 *** =sct
 ```{r}
-test_output_contains('for (year in c(2010,2011,2012,2013,2014,2015)){print(paste("The year is", year))}', incorrect_msg = 'Your output did not contain the correct print outs, look at the instructions for help.')
+
 
 test_error()
 success_msg("Good work!")
