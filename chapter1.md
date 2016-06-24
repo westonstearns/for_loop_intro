@@ -187,7 +187,7 @@ for (year in c(2010,2011,2012,2013,2014,2015,2016)){
 ```{r}
 test_for_loop(index = 1, 
               cond_test = test_student_typed("year in c(2010,2011,2012,2013,2014,2015,2016)", 
-                      not_typed_msg = "Make sure you use `year in c(2010,2011,2012,2013,2014,2015,2016)` to define your for loop."),
+                      not_typed_msg = "Make sure you use ```year in c(2010,2011,2012,2013,2014,2015,2016)``` to define your for loop."),
               not_found_msg = "Did you run your `for()` loop.")
 
 test_output_regex("The year is 201[0-6]{1}",
@@ -197,6 +197,56 @@ test_error()
 success_msg("Good work!")
 ```
 
+--- type:NormalExercise lang:r xp:100 skills:1  key:099f1482c3
+## For() loop improved
+
+You can even simplify the code even more: ```c(2010,2011,2012,2013,2014,2015,2016)``` can also be written as `2010:2016`; this creates the exact same sequence. 
+
+
+
+*** =instructions
+- Replace the ```c(2010,2011,2012,2013,2014,2015,2016)``` with `2010:2016`.
+
+*** =hint
+- Make sure the for loop {} are closed!
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+# Write for loop here
+for (___ in c(___:___)){
+  print(paste("The year is", year))
+}
+
+```
+
+*** =solution
+```{r}
+# Write for loop here
+for (year in c(2010:2016)){
+  print(paste("The year is", year))
+}
+
+
+```
+
+*** =sct
+```{r}
+test_for_loop(index = 1, 
+              cond_test = test_student_typed("year in c(2010:2016)", 
+                      not_typed_msg = "Make sure you use ```year in c(2010:2016)``` to define your for loop."),
+              not_found_msg = "Did you run your `for()` loop.")
+
+test_output_regex("The year is 201[0-6]{1}",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+
+test_error()
+success_msg("Good work!")
+```
 
 
 
