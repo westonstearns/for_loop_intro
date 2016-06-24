@@ -100,12 +100,12 @@ test_output_contains("The year is 2016", incorrect_msg = 'Your output did not co
 
 test_function("print", 
               args = NULL, index = 1, 
-              not_called_msg = "Did you rremember to include the `print` function?", 
+              not_called_msg = "Did you remember to include the `print` function?", 
               args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 test_function("print", 
               args = NULL, index = 2, 
-              not_called_msg = "Did you rremember to include the `print` function?", 
+              not_called_msg = "Did you remember to include the `print` function?", 
               args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 test_function("print", 
@@ -115,22 +115,22 @@ test_function("print",
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 test_function("print", 
               args = NULL, index = 4, 
-              not_called_msg = "Did you rremember to include the `print` function?", 
+              not_called_msg = "Did you remember to include the `print` function?", 
               args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 test_function("print", 
               args = NULL, index = 5, 
-              not_called_msg = "Did you rremember to include the `print` function?", 
+              not_called_msg = "Did you remember to include the `print` function?", 
               args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 test_function("print", 
               args = NULL, index = 6, 
-              not_called_msg = "Did you rremember to include the `print` function?", 
+              not_called_msg = "Did you remember to include the `print` function?", 
               args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 test_function("print", 
               args = NULL, index = 7, 
-              not_called_msg = "Did you rremember to include the `print` function?", 
+              not_called_msg = "Did you remember to include the `print` function?", 
               args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 
