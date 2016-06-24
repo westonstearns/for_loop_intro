@@ -184,9 +184,7 @@ for (year in c(2010,2011,2012,2013,2014,2015)){
 
 *** =sct
 ```{r}
-test_output_contains('for (year in c(2010,2011,2012,2013,2014,2015)){
-  print(paste("The year is", year))
-}', incorrect_msg = 'Your output did not contain the correct print outs, look at the instructions for help.')
+test_output_contains('for (year in c(2010,2011,2012,2013,2014,2015)){print(paste("The year is", year))}', incorrect_msg = 'Your output did not contain the correct print outs, look at the instructions for help.')
 
 test_error()
 success_msg("Good work!")
