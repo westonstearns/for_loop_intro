@@ -139,3 +139,59 @@ test_error(incorrect_msg = "Fill in the blank spaces with R code. Follow the exa
 success_msg("Good work!")
 ```
 
+--- type:NormalExercise lang:r xp:100 skills:1 key:e20287ea44
+## For loop
+
+You immediately see this is rather tedious: you repeat the same code chunk over and over. 
+
+This violates the DRY principle, known in every programming language: Don’t Repeat Yourself, at all cost. 
+
+In this case, by making use of a for loop in R, you can automate the repetitive part:
+
+```for (variable in c(sequence)){
+  print(paste("Text", number))
+}```
+
+*** =instructions
+- Use a `for()` loop to print out the list of 7 phrases.
+
+
+*** =hint
+- Make sure the for loop {} are closed!
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+Write for loop here
+for (___ in c(___,___,___,___,___,___,___)){
+  print(paste("The year is", year))
+}
+
+```
+
+*** =solution
+```{r}
+Write for loop here
+for (year in c(2010,2011,2012,2013,2014,2015)){
+  print(paste("The year is", year))
+}
+
+```
+
+*** =sct
+```{r}
+test_output_contains('for (year in c(2010,2011,2012,2013,2014,2015)){
+  print(paste("The year is", year))
+}', incorrect_msg = 'Your output did not contain the correct print outs, look at the instructions for help.')
+
+test_error()
+success_msg("Good work!")
+```
+
+
+
+
