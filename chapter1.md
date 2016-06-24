@@ -200,7 +200,7 @@ success_msg("Good work!")
 --- type:NormalExercise lang:r xp:100 skills:1  key:ba6e1a41f2
 ## For() loop improved
 
-You can even simplify the code even more: ```c(2010,2011,2012,2013,2014,2015,2016)``` can also be written as `2010:2016`; this creates the exact same sequence. 
+You can even simplify the code even more: <p>```c(2010,2011,2012,2013,2014,2015,2016)```</p> <p>can also be written as `2010:2016`;</p> this creates the exact same sequence. 
 
 
 
@@ -226,7 +226,7 @@ for (___ in c(___:___)){
 
 *** =solution
 ```{r}
-# Write for loop here
+# Write improved for loop here
 for (year in c(2010:2016)){
   print(paste("The year is", year))
 }
