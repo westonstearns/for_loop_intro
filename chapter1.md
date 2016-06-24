@@ -1,116 +1,126 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
-attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
-
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:cf8dea24a7
-## A really bad movie
-
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
-
-*** =instructions
-- Adventure
-- Action
-- Animation
-- Comedy
-
-*** =hint
-Have a look at the plot. Which color does the point with the lowest rating have?
-
-*** =pre_exercise_code
-```{r}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
-
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-library(ggplot2)
-
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
-```
-
-*** =sct
-```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
-
-msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
-```
+title       : For loops
+description : A brief intro to writing for loops
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e20287ea44
-## More movies
+## For loop
 
-In the previous exercise, you saw a dataset about movies. In this exercise, we'll have a look at yet another dataset about movies!
+In this tutorial we will have a look at how you can write a basic for loop in R. It is aimed at beginners, and if you’re not yet familiar with the basic syntax of the R language we recommend you to first have a look at this <a href = "https://www.datacamp.com/courses/free-introduction-to-r">introductory R tutorial</a>.
 
-A dataset with a selection of movies, `movie_selection`, is available in the workspace.
+Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to automate parts of your code that are in need of repetition. 
+
+Suppose you want to make several printouts of the following form: The year is [year] where [year] is equal to 2010, 2011, up to 2016. 
+
+The following exercises will walk you through step by step.
+
+Let's begin by printing the form manually. 
 
 *** =instructions
-- Check out the structure of `movie_selection`.
-- Select movies with a rating of 5 or higher. Assign the result to `good_movies`.
-- Use `plot()` to  plot `good_movies$Run` on the x-axis, `good_movies$Rating` on the y-axis and set `col` to `good_movies$Genre`.
+- Use `print()`, `paste()` and the combination of the text string `"The year is"` and a numerical year to achve the desired print outs
+- Your code should follow the format ```print(paste("Test",Year))```
+
 
 *** =hint
-- Use `str()` for the first instruction.
-- For the second instruction, you should use `...[movie_selection$Rating >= 5, ]`.
-- For the plot, use `plot(x = ..., y = ..., col = ...)`.
+- There should be a total of 7 lines of code
 
 *** =pre_exercise_code
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
 
-library(MindOnStats)
-data(Movies)
-movie_selection <- Movies[Movies$Genre %in% c("action", "animated", "comedy"),c("Genre", "Rating", "Run")]
-
-# Clean up the environment
-rm(Movies)
 ```
 
 *** =sample_code
 ```{r}
-# movie_selection is available in your workspace
+# Print out the 7 text stirngs
+print(paste(___, ___))
 
-# Check out the structure of movie_selection
+___(___("___", ___))
 
+___(___("___", ___))
 
-# Select movies that have a rating of 5 or higher: good_movies
+___(___("___", ___))
 
+___(___("___", ___))
 
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
+___(___("___", ___))
+
+___(___("___", ___))
 
 ```
 
 *** =solution
 ```{r}
-# movie_selection is available in your workspace
+# Print out the 7 text strings
+print(paste("The year is", 2010))
 
-# Check out the structure of movie_selection
-str(movie_selection)
+print(paste("The year is", 2011))
 
-# Select movies that have a rating of 5 or higher: good_movies
-good_movies <- movie_selection[movie_selection$Rating >= 5, ]
+print(paste("The year is", 2012))
 
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
-plot(good_movies$Run, good_movies$Rating, col = good_movies$Genre)
+print(paste("The year is", 2013))
+
+print(paste("The year is", 2014))
+
+print(paste("The year is", 2015))
+
+print(paste("The year is", 2016))
+
 ```
 
 *** =sct
 ```{r}
 # SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
 
-test_function("str", args = "object",
-              not_called_msg = "You didn't call `str()`!",
-              incorrect_msg = "You didn't call `str(object = ...)` with the correct argument, `object`.")
+test_output_contains("This year is 2010", incorrect_msg = 'Your output didn't contain `"This is year 2010"`, look at the instructions for help.')
 
-test_object("good_movies")
+test_output_contains("This year is 2011", incorrect_msg = 'Your output didn't contain `"This is year 2011"`, look at the instructions for help. ')
 
-test_function("plot", args = "x")
-test_function("plot", args = "y")
-test_function("plot", args = "col")
+test_output_contains("This year is 2012", incorrect_msg = 'Your output didn't contain `"This is year 2012"`, look at the instructions for help.')
 
-test_error()
+test_output_contains("This year is 2013", incorrect_msg = 'Your output didn't contain `"This is year 2013"`, look at the instructions for help.')
 
+test_output_contains("This year is 2014", incorrect_msg = 'Your output didn't contain `"This is year 2014"`, look at the instructions for help.')
+
+test_output_contains("This year is 2015", incorrect_msg = 'Your output didn't contain `"This is year 2015"`, look at the instructions for help.')
+
+test_output_contains("This year is 2016", incorrect_msg = 'Your output didn't contain `"This is year 2016"`, look at the instructions for help.')
+
+test_function("print", 
+              args = NULL, index = 1, 
+              not_called_msg = "Did you rremember to include the `print` function?", 
+              args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
+              incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
+test_function("print", 
+              args = NULL, index = 2, 
+              not_called_msg = "Did you rremember to include the `print` function?", 
+              args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
+              incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
+test_function("print", 
+              args = NULL, index = 3, 
+              not_called_msg = "Did you rremember to include the `print` function?", 
+              args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
+              incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
+test_function("print", 
+              args = NULL, index = 4, 
+              not_called_msg = "Did you rremember to include the `print` function?", 
+              args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
+              incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
+test_function("print", 
+              args = NULL, index = 5, 
+              not_called_msg = "Did you rremember to include the `print` function?", 
+              args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
+              incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
+test_function("print", 
+              args = NULL, index = 6, 
+              not_called_msg = "Did you rremember to include the `print` function?", 
+              args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
+              incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
+test_function("print", 
+              args = NULL, index = 7, 
+              not_called_msg = "Did you rremember to include the `print` function?", 
+              args_not_specified_msg = "The `print` function doesn't have the correct arguments.", 
+              incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
+
+
+test_error(incorrect_msg = "Fill in the blank spaces with R code. Follow the example in the instrucitons and simply add the desired text and a year")
 success_msg("Good work!")
 ```
