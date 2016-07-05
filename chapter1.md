@@ -299,6 +299,19 @@ test_for_loop(index = 1,
 test_output_regex("The year is 2010|The year is 2012|The year is 2014|The year is 2016",
                   incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
 
+test_or(test_output_contains("The year is 2010"),
+        test_output_contains("The year is 2012"),
+        test_output_contains("The year is 2014"),
+        incorrect_msg = "Just print out the even years.")
+,
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+test_output_contains("The year is 2012",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+test_output_contains("The year is 2014",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+test_output_contains("The year is 2016",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+
 test_error()
 success_msg("Good work!")
 ```
