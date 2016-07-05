@@ -231,7 +231,6 @@ for (year in c(2010:2016)){
   print(paste("The year is", year))
 }
 
-
 ```
 
 *** =sct
@@ -242,6 +241,62 @@ test_for_loop(index = 1,
               not_found_msg = "Did you run your `for()` loop.")
 
 test_output_regex("The year is 201[0-6]{1}",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+
+test_error()
+success_msg("Good work!")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1  key:ba6e1a41f2
+## If statements
+
+You can further refine the for loop with `if` statements. This allows you to add conditions varrying the output of your loop. 
+
+Here you will ad an `if` statement restricting the output to just even years.
+
+An `if` statement follows the following pattern,
+```
+
+```
+
+*** =instructions
+- Ad the `if` command to the for loop
+- Use the modulo division operator to resrict the out put to even years
+
+*** =hint
+- Make sure the for loop {} are closed!
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+# Write for loop here
+for (___ in c(___:___)){
+  print(paste("The year is", year))
+}
+
+```
+
+*** =solution
+```{r}
+# Write improved for loop here
+for (year in c(2010:2016)){
+if(year %% 2 == 0)
+  print(paste("The year is", year))
+}
+```
+
+*** =sct
+```{r}
+test_for_loop(index = 1, 
+              cond_test = test_student_typed("year in c(2010:2016)", 
+                      not_typed_msg = "Make sure you use ```year in c(2010:2016)``` to define your for loop."),
+              not_found_msg = "Did you run your `for()` loop.")
+
+test_output_regex("The year is 2010|The year is 2012|The year is 2014",
                   incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
 
 test_error()
