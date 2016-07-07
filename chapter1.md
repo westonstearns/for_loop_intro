@@ -418,7 +418,7 @@ test_error()
 success_msg("Good work!")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1  key:8574335401
+--- type:NormalExercise lang:r xp:100 skills:1  key:ab048a3807
 ## For() loop application 
 
 You completed the simulation of 1000 games of war. Now take a look at the results. If you want to find the the proportions of wins by each player and the number of "war" rounds, you first need to count the number of each outcome. 
