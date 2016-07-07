@@ -387,7 +387,13 @@ modified_war <- function(){
 *** =sample_code
 ```{r}
 # Simulate 1000 games of war
+war_sim <- vector("list",1000)
 
+# run a 1000 iteration simulation of a modified game a war
+for (i in 1:1000)
+{
+  war_sim[[i]] <- modified_war()
+}
 # Print a table of one of the results
 
 
@@ -397,8 +403,8 @@ modified_war <- function(){
 ```{r}
 # Simulate 1000 games of war
 war_sim <- vector("list",1000)
-#
-# run a 100 iteration simulation of a modified game a war
+
+# run a 1000 iteration simulation of a modified game a war
 for (i in 1:1000)
 {
   war_sim[[i]] <- modified_war()
@@ -417,7 +423,7 @@ success_msg("Good work!")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1  key:ab048a3807
-## For() loop application 
+## For() loop application cont.
 
 You completed the simulation of 1000 games of war. Now take a look at the results. If you want to find the the proportions of wins by each player and the number of "war" rounds, you first need to count the number of each outcome. 
 
@@ -435,7 +441,55 @@ Follow the inctructions to count the different outcome types and then calculate 
 
 *** =pre_exercise_code
 ```{r}
-load(url(...))
+modified_war <- function(){
+  
+  # Creating cards
+  deck_of_cards <- rep(2:14,4)
+  shuffled_cards <- sample(deck_of_cards,52,replace = FALSE)
+  odds <- c(1:52)[c(T,F)]
+  sallys_cards <- shuffled_cards[odds]
+  evens <- c(1:52)[c(F,T)]
+  timmys_cards <- shuffled_cards[evens]
+  
+  # game results
+  results_vector <- vector("numeric", 26)
+  for(i in 1:26) {
+    results <- sallys_cards[i] == timmys_cards[i]
+    if(results == FALSE){
+      if(sallys_cards[i] > timmys_cards[i]){
+        results_vector[i] <- c("Sally wins")
+      } else{
+        results_vector[i] <- c("Timmy wins")
+      }
+    }
+    if(results == TRUE){
+      if(i+5 > 25){
+        results_vector[i] <- c("War")
+        next
+      }
+      results <- sallys_cards[i+4] == timmys_cards[i+4]
+      if(results == TRUE){
+        results_vector[i] <- c("War")
+      } else{
+        results_vector[i] <- c("War")
+      }
+    }
+  }
+  results_vector
+}
+
+# Simulate 1000 games of war
+war_sim <- vector("list",1000)
+
+# run a 1000 iteration simulation of a modified game a war
+for (i in 1:1000)
+{
+  war_sim[[i]] <- modified_war()
+}
+
+# Print a table of one of the results
+table(war_sim[1])
+
 ```
 
 *** =sample_code
