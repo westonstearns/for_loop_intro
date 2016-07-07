@@ -328,7 +328,7 @@ Now you have seen a few of the possibilities of the for loop, however, there are
 
 One applicaiton that is seen quite often is using a loop to simulate data or events. So let's give that a try.
 
-A function `modified_war` was created that simulates a the card game war. If you are not familiar with this game is it quite simple. a full deck of cards are shuffeled and divied between two players. The two players do not look at their cards and simply draw the top card in their stack revealing its value, whichever player has the highest card wins that round. 
+A function `modified_war()` was created that simulates a the card game war. If you are not familiar with this game is it quite simple. a full deck of cards are shuffeled and divied between two players. The two players do not look at their cards and simply draw the top card in their stack revealing its value, whichever player has the highest card wins that round. 
 
 If the two players draw cards of the same value that is called war! They then draw three cards which are discarded and then the fourth card decides the winner of the "war" round. The winner collects both cards adding to their stack. The game continues until one player is out of cards!
 
