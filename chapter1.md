@@ -337,8 +337,9 @@ The `modified_war()` function creates a vitrual deck of cards, shuffels it and t
 We can use this fucntion to simulate as many games as we would like and calculate the porportion of each player winning and the proportion of "wars".
 
 *** =instructions
-- Use a `for()` loop to simulate 1000 games.
-- Print a table of one of the results.
+- Complete the code to create an empty vector `war_sim`
+- Finish the `for()` loop code to simulate 1000 games.
+- Print a table of the frist war simulation results, the frist resuts would be found using the code `war_sim[1]`.
 
 *** =hint
 - Make sure the for loop {} are closed!
@@ -386,31 +387,31 @@ modified_war <- function(){
 
 *** =sample_code
 ```{r}
-# Simulate 1000 games of war
+# Begin simulation of 1000 games of war by creating a empty vector
 war_sim <- vector("list",1000)
 
-# run a 1000 iteration simulation of a modified game a war
-for (i in 1:1000)
+# Run a 1000 iteration simulation of a modified game a war
+for (i in 1:___)
 {
   war_sim[[i]] <- modified_war()
 }
-# Print a table of one of the results
-
+# Print a table of only one of the results
+table(___)
 
 ```
 
 *** =solution
 ```{r}
-# Simulate 1000 games of war
+# Begin simulation of 1000 games of war by creating a empty vector
 war_sim <- vector("list",1000)
 
-# run a 1000 iteration simulation of a modified game a war
+# Run a 1000 iteration simulation of a modified game a war
 for (i in 1:1000)
 {
   war_sim[[i]] <- modified_war()
 }
 
-# Print a table of one of the results
+# Print a table of only one of the results
 table(war_sim[1])
 
 ```
