@@ -7,9 +7,9 @@ description : A brief intro to writing for loops
 
 In this tutorial we will have a look at how you can write a basic for loop in R. It is aimed at beginners, and if you’re not yet familiar with the basic syntax of the R language we recommend you to first have a look at this <a href = "https://www.datacamp.com/courses/free-introduction-to-r">introductory R tutorial</a>.
 
-Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to automate parts of your code that are in need of repetition. 
+Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to repeat parts of your code. 
 
-Suppose you want to make several printouts of the following form: The year is [year] where [year] is equal to 2010, 2011, up to 2016. 
+Suppose you want to make several printouts of the following form: The year is [year], where [year] is equal to 2010, 2011, up to 2016. 
 
 The following exercises will walk you through step by step.
 
@@ -167,6 +167,7 @@ In this case, by making use of a for loop in R, you can automate the repetitive 
 *** =sample_code
 ```{r}
 # Write for loop here
+
 for (___ in c(___,___,___,___,___,___,___)){
   print(paste("The year is", year))
 }
@@ -176,6 +177,7 @@ for (___ in c(___,___,___,___,___,___,___)){
 *** =solution
 ```{r}
 # Write for loop here
+
 for (year in c(2010,2011,2012,2013,2014,2015,2016)){
   print(paste("The year is", year))
 }
@@ -218,6 +220,7 @@ You can even simplify the code even more: <p>```c(2010,2011,2012,2013,2014,2015,
 *** =sample_code
 ```{r}
 # Write for loop here
+
 for (___ in c(___:___)){
   print(paste("The year is", year))
 }
@@ -227,6 +230,7 @@ for (___ in c(___:___)){
 *** =solution
 ```{r}
 # Write improved for loop here
+
 for (year in c(2010:2016)){
   print(paste("The year is", year))
 }
@@ -260,9 +264,8 @@ An `if` statement follows the following pattern,
 ```
 
 *** =instructions
-- Ad the `if` command to the for loop
-- Use the modulo division operator to resrict the out put to even years
-
+- Complete the `if` command to the for loop but adding a `2 == 0` after the modulus division operator `%%`. 
+- The `%%` operator finds the remainder following the division of two numbers. In this case the `year` is being divided by `2` so any even year would have a remainder of `0` or `%% 2 == 0`.
 *** =hint
 - Make sure the for loop {} are closed!
 
@@ -274,7 +277,9 @@ An `if` statement follows the following pattern,
 *** =sample_code
 ```{r}
 # Write for loop here
+
 for (___ in c(___:___)){
+if(year %% ____ )
   print(paste("The year is", year))
 }
 
