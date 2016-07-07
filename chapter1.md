@@ -333,7 +333,11 @@ We can use this fucntion to simulate as many games as we would like and calculat
 
 *** =instructions
 - Use a `for()` loop to simulate 1000 games.
-- calculate the proprotion of wins by Sally 
+- Print a table of one of the results.
+- Counting the number of wars in the simulated games.
+- Calculate the proprotion of wins by Sally. 
+- Calculate the proprotion of wins by Timmy.
+- Calculate the proportion of wars.
 
 
 *** =hint
@@ -341,24 +345,87 @@ We can use this fucntion to simulate as many games as we would like and calculat
 
 *** =pre_exercise_code
 ```{r}
+modified_war <- function(){
+  
+  # Creating cards
+  deck_of_cards <- rep(2:14,4)
+  shuffled_cards <- sample(deck_of_cards,52,replace = FALSE)
+  odds <- c(1:52)[c(T,F)]
+  sallys_cards <- shuffled_cards[odds]
+  evens <- c(1:52)[c(F,T)]
+  timmys_cards <- shuffled_cards[evens]
+  
+  # game results
+  results_vector <- vector("numeric", 26)
+  for(i in 1:26) {
+    results <- sallys_cards[i] == timmys_cards[i]
+    if(results == FALSE){
+      if(sallys_cards[i] > timmys_cards[i]){
+        results_vector[i] <- c("Sally wins")
+      } else{
+        results_vector[i] <- c("Timmy wins")
+      }
+    }
+    if(results == TRUE){
+      if(i+5 > 25){
+        results_vector[i] <- c("War")
+        next
+      }
+      results <- sallys_cards[i+4] == timmys_cards[i+4]
+      if(results == TRUE){
+        results_vector[i] <- c("War")
+      } else{
+        results_vector[i] <- c("War")
+      }
+    }
+  }
+  results_vector
+}
 
 ```
 
 *** =sample_code
 ```{r}
-# Write for loop here
-for (___ in c(___,___,___,___,___,___,___)){
-  print(paste("The year is", year))
-}
+# Simulate 1000 games of war
+
+# Print a table of one of the results
+
+# Count the number of wars in the simulated games
+
+# Calculate the proprotion of wins by Sally
+
+# Calculate the proprotion of wins by Timmy
+
+# Calculate the proportion of wars
+
 
 ```
 
 *** =solution
 ```{r}
-# Write for loop here
-for (year in c(2010,2011,2012,2013,2014,2015,2016)){
-  print(paste("The year is", year))
+# Simulate 1000 games of war
+war_sim <- vector("list",1000)
+#
+# run a 100 iteration simulation of a modified game a war
+for (i in 1:1000)
+{
+  war_sim[[i]] <- modified_war()
 }
+
+# Print a table of one of the results
+table(war_sim[1])
+
+# Counting the number of wars in the simulated games
+wars <- unlist(regmatches(unlist(war_sim),gregexpr("War",unlist(war_sim),perl = TRUE)))
+Sally_wins <- unlist(regmatches(unlist(war_sim),gregexpr("Sally wins",unlist(war_sim),perl = TRUE)))
+Timmy_wins <- unlist(regmatches(unlist(war_sim),gregexpr("Timmy wins",unlist(war_sim),perl = TRUE)))
+# Calculate the proprotion of wins by Sally
+
+# Calculate the proprotion of wins by Timmy
+
+# Calculate the proportion of wars
+
+
 
 
 ```
