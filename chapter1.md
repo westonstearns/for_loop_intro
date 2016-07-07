@@ -316,5 +316,64 @@ test_error()
 success_msg("Good work!")
 ```
 
+--- type:NormalExercise lang:r xp:100 skills:1  key:099f1482c3
+## For() loop application 
 
+Now you have seen a few of the possibilities of the for loop, however, there are many more useful applications for the for loop than to print out a series of repeated strings telling you what year it is. 
+
+One applicaiton that is seen quite often is using a loop to simulate data or events. So let's give that a try.
+
+A function `modified_war` was created that simulates a the card game war. If you are not familiar with this game is it quite simple. a full deck of cards are shuffeled and divied between two players. The two players do not look at their cards and simply draw the top card in their stack revealing its value, whichever player has the highest card wins that round. 
+
+If the two players draw cards of the same value that is called war! They then draw three cards which are discarded and then the fourth card decides the winner of the "war" round. The winner collects both cards adding to their stack. The game continues until one player is out of cards!
+
+The `modified_war()` function creates a vitrual deck of cards, shuffels it and then deals the cards to two hypothetical players. Then it exectues the game collecting the winner of each round and whether the round was a "war". The function collects the results of the game for 26 rounds. 
+
+We can use this fucntion to simulate as many games as we would like and calculate the porportion of each player winning and the proportion of "wars".
+
+*** =instructions
+- Use a `for()` loop to simulate 1000 games.
+- calculate the proprotion of wins by Sally 
+
+
+*** =hint
+- Make sure the for loop {} are closed!
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+# Write for loop here
+for (___ in c(___,___,___,___,___,___,___)){
+  print(paste("The year is", year))
+}
+
+```
+
+*** =solution
+```{r}
+# Write for loop here
+for (year in c(2010,2011,2012,2013,2014,2015,2016)){
+  print(paste("The year is", year))
+}
+
+
+```
+
+*** =sct
+```{r}
+test_for_loop(index = 1, 
+              cond_test = test_student_typed("year in c(2010,2011,2012,2013,2014,2015,2016)", 
+                      not_typed_msg = "Make sure you use ```year in c(2010,2011,2012,2013,2014,2015,2016)``` to define your for loop."),
+              not_found_msg = "Did you run your `for()` loop.")
+
+test_output_regex("The year is 201[0-6]{1}",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+
+test_error()
+success_msg("Good work!")
+```
 
