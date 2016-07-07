@@ -203,9 +203,11 @@ success_msg("Good work!")
 --- type:NormalExercise lang:r xp:100 skills:1  key:ba6e1a41f2
 ## For() loop improved
 
+The last exercise shows the value of a for loop when you need to print out many forms of the same string. The higher the number of outputs the more useful the loop is. Imagin printing thousands of lines manually. It would be far too time consuming to complete. 
+
+Nonetheless, there are still ways we can improve our loop.
+
 You can even simplify the code even more: <p>```c(2010,2011,2012,2013,2014,2015,2016)```</p> <p>can also be written as `2010:2016`;</p> this creates the exact same sequence. 
-
-
 
 *** =instructions
 - Replace the ```c(2010,2011,2012,2013,2014,2015,2016)``` with `2010:2016`.
@@ -255,18 +257,29 @@ success_msg("Good work!")
 --- type:NormalExercise lang:r xp:100 skills:1  key:aa6c7aff9d
 ## If statements
 
+Not that you've seen the basic syntax for a loop, there are other ways you can manipulate or refine the outputs of the loop.
+
 You can further refine the for loop with `if` statements. This allows you to add conditions varrying the output of your loop. 
 
 Here you will ad an `if` statement restricting the output to just even years.
 
 An `if` statement follows the following pattern,
 ```
-
+if(condition)
+    expression
+```
+An `else` condition can be added detailing what to do given the `if` condition is not satisfied,
+```
+if(condition)
+    expression
+    else
+      expression
 ```
 
 *** =instructions
 - Complete the `if` command to the for loop but adding a `2 == 0` after the modulus division operator `%%`. 
-- The `%%` operator finds the remainder following the division of two numbers. In this case the `year` is being divided by `2` so any even year would have a remainder of `0` or `%% 2 == 0`.
+- Note: The `%%` operator finds the remainder following the division of two numbers. In this case the `year` is being divided by `2` so any even year would have a remainder of `0` or `%% 2 == 0`.
+
 *** =hint
 - Make sure the for loop {} are closed!
 
@@ -289,6 +302,7 @@ if(year %% ____ )
 *** =solution
 ```{r}
 # Write improved for loop here
+
 for (year in c(2010:2016)){
 if(year %% 2 == 0)
   print(paste("The year is", year))
