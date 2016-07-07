@@ -432,8 +432,8 @@ Follow the inctructions to count the different outcome types and then calculate 
 
 *** =instructions
 - Complete the code to count the number of wars in the simulated games.
-- Complete the code to count the number of wins by Sally and print the proprotion of wins by Sally. To complete the code fill the `___` with the expresion `Sally_wins`.
-- Complete the code to count the number of wins by Timmy and print the proprotion of wins by Timmy.To complete the code fill the `___` with the expresion `Timmy_wins`. 
+- Complete the code to count the number of wins by Sally and print the proprotion of wins by Sally. To complete the code fill the `___` with the expresion `Sally wins`.
+- Complete the code to count the number of wins by Timmy and print the proprotion of wins by Timmy.To complete the code fill the `___` with the expresion `Timmy wins`. 
 - Complete the code and print the proportion of wars.
 
 
