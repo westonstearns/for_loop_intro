@@ -480,7 +480,7 @@ modified_war <- function(){
 }
 
 # Simulate 1000 games of war
-____ <- vector("list",1000)
+war_sim <- vector("list",1000)
 
 # run a 1000 iteration simulation of a modified game a war
 for (i in 1:1000)
