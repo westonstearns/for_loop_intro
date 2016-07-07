@@ -32,25 +32,25 @@ Let's begin by printing the form manually.
 ```{r}
 # Print out the 7 text stirngs
 # 2010
-print(paste(___, ___))
+print(paste("The year is", ___))
 
 # 2011
-___(___("___", ___))
+print(paste("The year is", ___))
 
 # 2012
-___(___("___", ___))
+print(paste("___", 2012))
 
 # 2013
-___(___("___", ___))
+print(paste("___", 2013))
 
 # 2014
-___(___("___", ___))
+print(___("The year is", 2014))
 
 # 2015
-___(___("___", ___))
+print(___("The year is", 2015))
 
 # 2016
-___(___("___", ___))
+___v(paste("The year is", 2016))
 
 ```
 
