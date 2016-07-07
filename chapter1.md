@@ -50,7 +50,7 @@ print(___("The year is", 2014))
 print(___("The year is", 2015))
 
 # 2016
-___v(paste("The year is", 2016))
+___(paste("The year is", 2016))
 
 ```
 
