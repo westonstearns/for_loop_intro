@@ -334,11 +334,6 @@ We can use this fucntion to simulate as many games as we would like and calculat
 *** =instructions
 - Use a `for()` loop to simulate 1000 games.
 - Print a table of one of the results.
-- Counting the number of wars in the simulated games.
-- Calculate the proprotion of wins by Sally. 
-- Calculate the proprotion of wins by Timmy.
-- Calculate the proportion of wars.
-
 
 *** =hint
 - Make sure the for loop {} are closed!
@@ -390,14 +385,6 @@ modified_war <- function(){
 
 # Print a table of one of the results
 
-# Count the number of wars in the simulated games
-
-# Calculate the proprotion of wins by Sally
-
-# Calculate the proprotion of wins by Timmy
-
-# Calculate the proportion of wars
-
 
 ```
 
@@ -415,10 +402,64 @@ for (i in 1:1000)
 # Print a table of one of the results
 table(war_sim[1])
 
+```
+
+*** =sct
+```{r}
+test_for_loop(index = 1, 
+              cond_test = test_student_typed("year in c(2010,2011,2012,2013,2014,2015,2016)", 
+                      not_typed_msg = "Make sure you use ```year in c(2010,2011,2012,2013,2014,2015,2016)``` to define your for loop."),
+              not_found_msg = "Did you run your `for()` loop.")
+
+test_output_regex("The year is 201[0-6]{1}",
+                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
+
+test_error()
+success_msg("Good work!")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1  key:8574335401
+## For() loop application 
+
+You completed the simulation of 1000 games of war. Now take a look at the results. If you want to find the the proportions of wins by each player and the number of "war" rounds, you first need to count the number of each outcome. 
+
+Follow the inctructions to count the different outcome types and then calculate the three proportions. 
+
+*** =instructions
+- Use thee the number of wars in the simulated games.
+- Calculate the proprotion of wins by Sally. 
+- Calculate the proprotion of wins by Timmy.
+- Calculate the proportion of wars.
+
+
+*** =hint
+- Make sure the for loop {} are closed!
+
+*** =pre_exercise_code
+```{r}
+load(url(...))
+```
+
+*** =sample_code
+```{r}
+# Count the number of wars in the simulated games
+
+# Calculate the proprotion of wins by Sally
+
+# Calculate the proprotion of wins by Timmy
+
+# Calculate the proportion of wars
+
+
+```
+
+*** =solution
+```{r}
 # Counting the number of wars in the simulated games
 wars <- unlist(regmatches(unlist(war_sim),gregexpr("War",unlist(war_sim),perl = TRUE)))
 Sally_wins <- unlist(regmatches(unlist(war_sim),gregexpr("Sally wins",unlist(war_sim),perl = TRUE)))
 Timmy_wins <- unlist(regmatches(unlist(war_sim),gregexpr("Timmy wins",unlist(war_sim),perl = TRUE)))
+
 # Calculate the proprotion of wins by Sally
 
 # Calculate the proprotion of wins by Timmy
