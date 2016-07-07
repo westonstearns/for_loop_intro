@@ -430,10 +430,10 @@ You completed the simulation of 1000 games of war. Now take a look at the result
 Follow the inctructions to count the different outcome types and then calculate the three proportions. 
 
 *** =instructions
-- Use thee the number of wars in the simulated games.
-- Calculate the proprotion of wins by Sally. 
-- Calculate the proprotion of wins by Timmy.
-- Calculate the proportion of wars.
+- Complete the code to count the number of wars in the simulated games.
+- Complete the code to count the number of wins by Sally and print the proprotion of wins by Sally. To complete the code fill the `___` with the expresion `Sally_wins`.
+- Complete the code to count the number of wins by Timmy and print the proprotion of wins by Timmy.To complete the code fill the `___` with the expresion `Timmy_wins`. 
+- Complete the code and print the proportion of wars.
 
 
 *** =hint
@@ -494,44 +494,42 @@ table(war_sim[1])
 
 *** =sample_code
 ```{r}
-# Count the number of wars in the simulated games
+# Counting the number of wars in the simulated games
+wars <- length(unlist(regmatches(unlist(war_sim),gregexpr("War",unlist(war_sim),perl = TRUE))))
 
-# Calculate the proprotion of wins by Sally
+# Count Sally's wins and calculate the proprotion of wins by Sally
+Sally_wins <- length(unlist(regmatches(unlist(war_sim),gregexpr("____",unlist(war_sim),perl = TRUE))))
+Sally_wins/(26*1000)
 
-# Calculate the proprotion of wins by Timmy
+# Count Timmy's wins and calculate the proprotion of wins by Timmy
+Timmy_wins <- length(unlist(regmatches(unlist(war_sim),gregexpr("____",unlist(war_sim),perl = TRUE))))
+Timmy_wins/(26*1000)
 
 # Calculate the proportion of wars
-
+___/(wars + Sally_wins + Timmy_wins)
 
 ```
 
 *** =solution
 ```{r}
 # Counting the number of wars in the simulated games
-wars <- unlist(regmatches(unlist(war_sim),gregexpr("War",unlist(war_sim),perl = TRUE)))
-Sally_wins <- unlist(regmatches(unlist(war_sim),gregexpr("Sally wins",unlist(war_sim),perl = TRUE)))
-Timmy_wins <- unlist(regmatches(unlist(war_sim),gregexpr("Timmy wins",unlist(war_sim),perl = TRUE)))
+wars <- length(unlist(regmatches(unlist(war_sim),gregexpr("War",unlist(war_sim),perl = TRUE))))
 
-# Calculate the proprotion of wins by Sally
+# Count Sally's wins and calculate the proprotion of wins by Sally
+Sally_wins <- length(unlist(regmatches(unlist(war_sim),gregexpr("Sally wins",unlist(war_sim),perl = TRUE))))
+Sally_wins/(26*1000)
 
-# Calculate the proprotion of wins by Timmy
+# Count Timmy's wins and calculate the proprotion of wins by Timmy
+Timmy_wins <- length(unlist(regmatches(unlist(war_sim),gregexpr("Timmy wins",unlist(war_sim),perl = TRUE))))
+Timmy_wins/(26*1000)
 
 # Calculate the proportion of wars
-
-
-
+wars/(wars + Sally_wins + Timmy_wins)
 
 ```
 
 *** =sct
 ```{r}
-test_for_loop(index = 1, 
-              cond_test = test_student_typed("year in c(2010,2011,2012,2013,2014,2015,2016)", 
-                      not_typed_msg = "Make sure you use ```year in c(2010,2011,2012,2013,2014,2015,2016)``` to define your for loop."),
-              not_found_msg = "Did you run your `for()` loop.")
-
-test_output_regex("The year is 201[0-6]{1}",
-                  incorrect_msg = "You didn't print out all of the text forms. Make sure all the years are included.")
 
 test_error()
 success_msg("Good work!")
