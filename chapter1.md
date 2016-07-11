@@ -135,7 +135,7 @@ test_function("print",
               incorrect_msg = "The `print` function is not correct. Look at the instructions for help!")
 
 
-test_error(incorrect_msg = "Fill in the blank spaces with R code. Follow the example in the instrucitons and simply add the desired text and a year")
+test_error(incorrect_msg = "Fill in the blank spaces with R code. Follow the example in the instructions and simply add the desired text and a year")
 success_msg("Good work!")
 ```
 
@@ -203,7 +203,7 @@ success_msg("Good work!")
 --- type:NormalExercise lang:r xp:100 skills:1  key:ba6e1a41f2
 ## For() loop improved
 
-The last exercise shows the value of a for loop when you need to print out many forms of the same string. The higher the number of outputs the more useful the loop is. Imagin printing thousands of lines manually. It would be far too time consuming to complete. 
+The last exercise shows the value of a for loop when you need to print out many forms of the same string. The higher the number of outputs the more useful the loop is. Imagine printing thousands of lines manually. It would be far too time-consuming to complete. 
 
 Nonetheless, there are still ways we can improve our loop.
 
@@ -259,9 +259,9 @@ success_msg("Good work!")
 
 Not that you've seen the basic syntax for a loop, there are other ways you can manipulate or refine the outputs of the loop.
 
-You can further refine the for loop with `if` statements. This allows you to add conditions varrying the output of your loop. 
+You can further refine the for loop with `if` statements. This allows you to add conditions varying the output of your loop. 
 
-Here you will ad an `if` statement restricting the output to just even years.
+Here you will add an `if` statement restricting the output to just even years.
 
 An `if` statement follows the following pattern,
 ```
@@ -278,7 +278,7 @@ if(condition)
 
 *** =instructions
 - Complete the `if` command to the for loop but adding a `2 == 0` after the modulus division operator `%%`. 
-- Note: The `%%` operator finds the remainder following the division of two numbers. In this case the `year` is being divided by `2` so any even year would have a remainder of `0` or `%% 2 == 0`.
+- Note: The `%%` operator finds the remainder following the division of two numbers. In this case, the `year` is being divided by `2` so any even year would have a remainder of `0` or `%% 2 == 0`.
 
 *** =hint
 - Make sure the for loop {} are closed!
@@ -326,20 +326,20 @@ success_msg("Good work!")
 
 Now you have seen a few of the possibilities of the for loop, however, there are many more useful applications for the for loop than to print out a series of repeated strings telling you what year it is. 
 
-One applicaiton that is seen quite often is using a loop to simulate data or events. So let's give that a try.
+One application that is seen quite often is using a loop to simulate data or events. So let's give that a try.
 
-A function `modified_war()` was created that simulates a the card game war. If you are not familiar with this game is it quite simple. a full deck of cards are shuffeled and divied between two players. The two players do not look at their cards and simply draw the top card in their stack revealing its value, whichever player has the highest card wins that round. 
+A function `modified_war()` was created that simulates the card game war. If you are not familiar with this game is it quite simple. A full deck of cards is shuffled and divided between two players. The two players do not look at their cards and simply draw the top card in their stack revealing its value, whichever player has the highest card wins that round. 
 
 If the two players draw cards of the same value that is called war! They then draw three cards which are discarded and then the fourth card decides the winner of the "war" round. The winner collects both cards adding to their stack. The game continues until one player is out of cards!
 
-The `modified_war()` function creates a vitrual deck of cards, shuffels it and then deals the cards to two hypothetical players. Then it exectues the game collecting the winner of each round and whether the round was a "war". The function collects the results of the game for 26 rounds. 
+The `modified_war()` function creates a virtual deck of cards, shuffles it and then deals the cards to two hypothetical players. Then it executes the game collecting the winner of each round and whether the round was a "war". The function collects the results of the game for 26 rounds. 
 
-We can use this fucntion to simulate as many games as we would like and calculate the porportion of each player winning and the proportion of "wars".
+We can use this function to simulate as many games as we would like and calculate the proportion of each player winning and the proportion of "wars".
 
 *** =instructions
 - Complete the code to create an empty vector `war_sim`
 - Finish the `for()` loop code to simulate 1000 games.
-- Print a table of the frist war simulation results, the frist resuts would be found using the code `war_sim[1]`.
+- Print a table of the first war simulation results, the first results would be found using the code `war_sim[1]`.
 
 *** =hint
 - Make sure the for loop {} are closed!
@@ -426,14 +426,14 @@ success_msg("Good work!")
 --- type:NormalExercise lang:r xp:100 skills:1  key:ab048a3807
 ## For() loop application cont.
 
-You completed the simulation of 1000 games of war. Now take a look at the results. If you want to find the the proportions of wins by each player and the number of "war" rounds, you first need to count the number of each outcome. 
+You completed the simulation of 1000 games of war. Now take a look at the results. If you want to find the proportions of wins by each player and the number of "war" rounds, you first need to count the number of each outcome. 
 
-Follow the inctructions to count the different outcome types and then calculate the three proportions. 
+Follow the instructions to count the different outcome types and then calculate the three proportions. 
 
 *** =instructions
 - Complete the code to count the number of wars in the simulated games.
-- Complete the code to count the number of wins by Sally and print the proprotion of wins by Sally. To complete the code fill the `___` with the expresion `Sally wins`.
-- Complete the code to count the number of wins by Timmy and print the proprotion of wins by Timmy.To complete the code fill the `___` with the expresion `Timmy wins`. 
+- Complete the code to count the number of wins by Sally and print the proportion of wins by Sally. To complete the code fill the `___` with the expression `Sally wins`.
+- Complete the code to count the number of wins by Timmy and print the proportion of wins by Timmy.To complete the code fill the `___` with the expression `Timmy wins`. 
 - Complete the code and print the proportion of wars.
 
 
@@ -535,4 +535,3 @@ wars/(wars + Sally_wins + Timmy_wins)
 test_error()
 success_msg("Good work!")
 ```
-
